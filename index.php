@@ -1,15 +1,39 @@
+
 <!doctype html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <h1>Привет</h1>
-    <t1>Это Лунтик, который прилетел к нам с небес в коконе паука, и он похож на динозавра)))</t1>
 </head>
 <body>
 
+<?php
+//echo "Обработчик формы";
+//var_dump($_REQUEST);
+$message =false;
+if
+(isset( $_REQUEST['name']) and isset($_REQUEST['phone']))
+{   $name = $_REQUEST["name"];
+    $phone = $_REQUEST["phone"];
+    $row = 'Здравствуйте,' . $name .
+        '  Ваш номер:' . $phone. PHP_EOL;
+    file_put_contents('./contacts.txt', $row, FILE_APPEND);
+    $message ='Спасибо, Мы с Вами свяжемся';
+}
+?>
+
+
+<?php if ($message ) : ?>
+<?= $message?>
+<php else: ?>
+<form action="index.php" method="post">
+<p>Представтесь</p>
+<input type="text" name="name">
+<p> Укажите Ваш номер</p>
+<input type="text" name="phone">
+<button type="submit">Отправить</button>
+
+</form>
+    <?php endif; ?>
 </body>
 </html>
