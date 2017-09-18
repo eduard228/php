@@ -1,8 +1,9 @@
 <?php
 require_once './database.php';
 ?>
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,17 +14,17 @@ require_once './database.php';
 <body>
 <table>
     <?php foreach (getAll() as $product) : ?>
-    <tr>
-        <td><?php echo $product[0] ?></td>
-        <td><?php echo $product[1] ?></td>
-    </tr>
+        <tr>
+            <td><?php echo $product[0] ?></td>
+            <td><?php echo $product[1] ?></td>
+        </tr>
     <?php endforeach; ?>
-
 </table>
+
 <form action="/lesson12/lesson12_1/index.php" method="post">
     <input type="text" name="title" placeholder="Название">
     <input type="text" name="price" placeholder="Цена">
-    <button type="submit" name="submit">Добавить</button></form>
-
+    <button type="submit" name="submit">Добавить</button>
+</form>
 </body>
 </html>

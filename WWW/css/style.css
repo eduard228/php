@@ -1,0 +1,24 @@
+body
+{
+padding-top: 50px;
+}
+.splash { 
+/* Отступ до содержимого splash */
+padding:9em 0 2em;
+background-image:url(../img/bg.jpg);
+/*Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока.*/
+background-size:cover;
+/*Свойство background-attachment устанавливает, будет ли прокручиваться фоновое изображение вместе с содержимым элемента.Делает фоновое изображение элемента неподвижным. */
+background-attachment:fixed;
+/* Цвет текста */
+color:#fff;
+/*выравнивание текста по центру */
+text-align:center
+}
+
+article {
+display:block;
+padding: 4em 0 3em;
+border-bottom: 1px solid rgba(0,0,0,0.05);
+background-color: #e5f9eb;
+}
